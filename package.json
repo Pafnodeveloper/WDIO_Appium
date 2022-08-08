@@ -1,0 +1,41 @@
+{
+  "name": "wdio_appium",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": " env-cmd --file ./environments/limetv.env ./node_modules/.bin/wdio ./configs/framework-config.js",
+    "notifyr": " env-cmd --file ./environments/limetv.env ./node_modules/.bin/wdio ./configs/notify-config.js --mochaOpts.grep @REAL",
+    "notifye": " env-cmd --file ./environments/notifye.env ./node_modules/.bin/wdio ./configs/notify-emulator-config.js --mochaOpts.grep @EMULATOR",
+    "intercept": " env-cmd --file ./environments/intercept.env ./node_modules/.bin/wdio ./configs/intercept-config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "_moduleAliases": {
+    "@pages": "tests/specs/pageobjects",
+    "@fixtures": "fixtures"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.6",
+    "@babel/preset-env": "^7.18.6",
+    "@babel/register": "^7.18.6",
+    "@wdio/allure-reporter": "^7.20.3",
+    "@wdio/appium-service": "^7.20.3",
+    "@wdio/cli": "^7.20.5",
+    "@wdio/local-runner": "^7.20.5",
+    "@wdio/mocha-framework": "^7.20.3",
+    "@wdio/spec-reporter": "^7.20.3",
+    "chai": "^4.3.6",
+    "node-fetch": "^2.6.1",
+    "wdio-wait-for": "^2.2.6"
+  },
+  "dependencies": {
+    "appium": "^1.22.3",
+    "env-cmd": "^10.1.0",
+    "module-alias": "^2.2.2",
+    "fs":"^0.0.1-security",
+    "process":"^0.11.10",
+    "child_process":"^1.0.2"
+  }
+}
